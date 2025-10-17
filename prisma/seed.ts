@@ -1,32 +1,32 @@
-/**
- * Adds seed data to your db
- *
- * @see https://www.prisma.io/docs/guides/database/seed-database
- */
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client'
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 async function main() {
-  const firstPostId = '5c03994c-fc16-47e0-bd02-d218a370a078';
-  await prisma.post.upsert({
-    where: {
-      id: firstPostId,
-    },
-    create: {
-      id: firstPostId,
-      title: 'First Post',
-      text: 'This is an example post generated from `prisma/seed.ts`',
-    },
-    update: {},
-  });
+  await prisma.post.createMany({
+    data: [
+      {
+        title: 'Bienvenida',
+        text: 'Esta es tu primera nota. Podés editarla o crear una nueva.',
+      },
+      {
+        title: 'Ideas para la app',
+        text: 'Agregar búsqueda, filtros por etiquetas y modo oscuro.',
+      },
+      {
+        title: 'Recordatorio',
+        text: 'Revisar documentación de tRPC y Prisma.',
+      },
+    ],
+  })
+  console.log('Notas iniciales agregadas ✅')
 }
 
 main()
   .catch((e) => {
-    console.error(e);
-    process.exit(1);
+    console.error(e)
+    process.exit(1)
   })
   .finally(async () => {
-    await prisma.$disconnect();
-  });
+    await prisma.$disconnect()
+  })
