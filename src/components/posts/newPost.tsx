@@ -1,6 +1,16 @@
 import { trpc } from '../../utils/trpc';
 import type { inferProcedureInput } from '@trpc/server';
 import type { AppRouter } from '~/server/routers/_app';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/card';
+import { Button } from '~/components/ui/button';
+import { Input } from '~/components/ui/input';
+import { Textarea } from '~/components/ui/textarea';
 
 export default function NewPost() {
   const utils = trpc.useUtils();
@@ -12,7 +22,6 @@ export default function NewPost() {
   });
   return (
     <form
-      className="py-2 w-4/6"
       onSubmit={async (e) => {
         /**
          * In a real app you probably don't want to use this manually
@@ -38,35 +47,36 @@ export default function NewPost() {
         }
       }}
     >
-      <div className="flex flex-col gap-y-4 font-semibold">
-        <input
-          className="focus-visible:outline-dashed outline-offset-4 outline-2 outline-gray-700 rounded-xl px-4 py-3 bg-gray-900"
-          id="title"
-          name="title"
-          type="text"
-          placeholder="Title"
-          disabled={addPost.isPending}
-        />
-        <textarea
-          className="resize-none focus-visible:outline-dashed outline-offset-4 outline-2 outline-gray-700 rounded-xl px-4 py-3 bg-gray-900"
-          id="text"
-          name="text"
-          placeholder="Text"
-          disabled={addPost.isPending}
-          rows={6}
-        />
-
-        <div className="flex justify-center">
-          <input
-            className="cursor-pointer bg-gray-900 p-2 rounded-md px-16"
-            type="submit"
+      <Card>
+        <CardHeader>
+          <CardTitle>
+            <Input
+              id="title"
+              name="title"
+              type="text"
+              placeholder="Title"
+              disabled={addPost.isPending}
+            />
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Textarea
+            id="text"
+            name="text"
+            placeholder="Text"
             disabled={addPost.isPending}
+            rows={6}
           />
+        </CardContent>
+        <CardFooter>
+          <Button type="submit" className="w-full disabled={addPost.isPending}">
+            Create
+          </Button>
           {addPost.error && (
             <p style={{ color: 'red' }}>{addPost.error.message}</p>
           )}
-        </div>
-      </div>
+        </CardFooter>
+      </Card>
     </form>
   );
 }

@@ -4,9 +4,8 @@
   "scripts": {
     "generate": "prisma generate",
     "prisma-studio": "prisma studio",
-    "db-seed": "prisma db seed",
     "db-reset": "prisma migrate dev reset",
-    "dx:next": "run-s migrate-dev db-seed && next dev",
+    "dx:next": "run-s migrate-dev && next dev",
     "dx:prisma-studio": "pnpm prisma-studio",
     "dx": "run-p dx:* --print-label",
     "dev": "pnpm dx:next",
@@ -22,9 +21,6 @@
     "test-start": "run-s test-unit test-e2e",
     "postinstall": "pnpm generate",
     "typecheck": "tsc --noEmit"
-  },
-  "prisma": {
-    "seed": "tsx prisma/seed.ts"
   },
   "prettier": {
     "printWidth": 80,
