@@ -23,7 +23,7 @@ export default function PostPage() {
     <DashboardLayout>
       <div className="flex flex-col justify-center items-center py-10 gap-4">
 <Button><Link href={"/"}>Back</Link></Button>
-    <Card> 
+    <Card className="mt-8"> 
         <CardHeader>
           <CardTitle>{post.title}</CardTitle>
         </CardHeader>

@@ -28,6 +28,7 @@
     "singleQuote": true
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
     "@prisma/client": "^6.7.0",
     "@radix-ui/react-avatar": "^1.1.10",
     "@radix-ui/react-collapsible": "^1.1.12",
@@ -37,6 +38,7 @@
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tooltip": "^1.2.8",
+    "@stackframe/react": "^2.8.44",
     "@tanstack/react-query": "^5.80.3",
     "@trpc/client": "npm:@trpc/client",
     "@trpc/next": "npm:@trpc/next",
@@ -47,6 +49,7 @@
     "date-fns": "^4.1.0",
     "lucide-react": "^0.546.0",
     "next": "^15.3.1",
+    "next-themes": "^0.4.6",
     "react": "^19.1.0",
     "react-day-picker": "^9.11.1",
     "react-dom": "^19.1.0",

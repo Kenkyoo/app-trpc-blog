@@ -8,10 +8,12 @@ import {
 } from '~/components/ui/breadcrumb';
 import { SidebarTrigger } from '~/components/ui/sidebar';
 import Posts from '~/components/posts/posts';
+import { Header } from '~/components/header';
 
 export default function DashboardPage() {
   return (
     <DashboardLayout>
+      <Header />
       <header className="sticky top-0 flex h-14 items-center gap-2 bg-background px-3">
         <SidebarTrigger />
         <Separator orientation="vertical" className="mr-2 h-4" />

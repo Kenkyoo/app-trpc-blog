@@ -34,7 +34,7 @@ export default function Posts() {
 
       {postsQuery.data?.pages.map((page, index) => (
         <Fragment key={page.items[0]?.id || index}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
             {page.items.map((item) => (
               <article key={item.id}>
                 <Post id={item.id} title={item.title} text={item.text} />
