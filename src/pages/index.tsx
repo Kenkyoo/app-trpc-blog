@@ -1,8 +1,9 @@
 import type { NextPageWithLayout } from './_app';
 import Dashboard from './dashboard';
 import { ThemeProvider } from '~/components/theme-provider';
-import { StackProvider, StackTheme } from '@stackframe/react';
-import { stackServerApp } from '../stack';
+import {
+  ClerkProvider,
+} from '@clerk/nextjs'
 
 const IndexPage: NextPageWithLayout = () => {
   // prefetch all posts for instant navigation
@@ -14,8 +15,7 @@ const IndexPage: NextPageWithLayout = () => {
   // }, [postsQuery.data, utils]);
 
   return (
-    <StackProvider app={stackServerApp}>
-      <StackTheme>
+        <ClerkProvider>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -24,8 +24,7 @@ const IndexPage: NextPageWithLayout = () => {
         >
           <Dashboard />
         </ThemeProvider>
-      </StackTheme>
-    </StackProvider>
+            </ClerkProvider>
   );
 };
 

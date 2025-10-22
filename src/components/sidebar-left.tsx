@@ -8,18 +8,20 @@ import {
   SidebarHeader,
   SidebarRail,
 } from '~/components/ui/sidebar';
-import ToggleTheme from "~/components/toggleTheme"
+import { NavUser } from "~/components/nav-user"
 
 export function SidebarLeft({
   ...props
 }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar className="border-r-0" {...props}>
-      <ToggleTheme />
-      <SidebarHeader className="text-center mt-10">
-        Create a new note
+      <SidebarHeader className="text-center my-5 px-4">
+        <NavUser />
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="px-2">
+        <h4 className="text-center my-2">
+        Create a new note
+      </h4>
         <NewPost />
       </SidebarContent>
       <SidebarRail />

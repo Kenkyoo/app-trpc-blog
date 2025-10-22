@@ -28,6 +28,7 @@
     "singleQuote": true
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.33.7",
     "@neondatabase/serverless": "^1.0.2",
     "@prisma/client": "^6.7.0",
     "@radix-ui/react-avatar": "^1.1.10",
@@ -39,6 +40,7 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tooltip": "^1.2.8",
     "@stackframe/react": "^2.8.44",
+    "@stackframe/stack-ui": "^2.8.44",
     "@tanstack/react-query": "^5.80.3",
     "@trpc/client": "npm:@trpc/client",
     "@trpc/next": "npm:@trpc/next",
