@@ -9,11 +9,9 @@ import {
 import { SidebarTrigger } from '~/components/ui/sidebar';
 import Posts from '~/components/posts/posts';
 import ToggleTheme from '~/components/toggleTheme';
-import { ClerkProvider } from '@clerk/nextjs';
 
 export default function DashboardPage() {
   return (
-    <ClerkProvider>
       <DashboardLayout>
         <header className="sticky top-0 flex h-14 items-center gap-2 bg-background px-3">
           <SidebarTrigger />
@@ -35,6 +33,5 @@ export default function DashboardPage() {
           <Posts />
         </div>
       </DashboardLayout>
-    </ClerkProvider>
   );
 }
