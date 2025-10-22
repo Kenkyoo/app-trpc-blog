@@ -8,7 +8,7 @@ import {
   SidebarHeader,
   SidebarRail,
 } from '~/components/ui/sidebar';
-import { NavUser } from "~/components/nav-user"
+import { NavUser } from '~/components/nav-user';
 
 export function SidebarLeft({
   ...props
@@ -19,9 +19,7 @@ export function SidebarLeft({
         <NavUser />
       </SidebarHeader>
       <SidebarContent className="px-2">
-        <h4 className="text-center my-2">
-        Create a new note
-      </h4>
+        <h4 className="text-center my-2">Create a new note</h4>
         <NewPost />
       </SidebarContent>
       <SidebarRail />

@@ -1,9 +1,7 @@
 import type { NextPageWithLayout } from './_app';
 import Dashboard from './dashboard';
 import { ThemeProvider } from '~/components/theme-provider';
-import {
-  ClerkProvider,
-} from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs';
 
 const IndexPage: NextPageWithLayout = () => {
   // prefetch all posts for instant navigation
@@ -15,16 +13,16 @@ const IndexPage: NextPageWithLayout = () => {
   // }, [postsQuery.data, utils]);
 
   return (
-        <ClerkProvider>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Dashboard />
-        </ThemeProvider>
-            </ClerkProvider>
+    <ClerkProvider>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="dark"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <Dashboard />
+      </ThemeProvider>
+    </ClerkProvider>
   );
 };
 
