@@ -20,7 +20,7 @@ export default function DashboardPage() {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbPage>
-                  Project Management & Task Tracking
+                  Project Management & Notes Tracking
                 </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>

@@ -15,23 +15,17 @@ export default function Posts() {
     },
   );
   return (
-    <div className="flex flex-col py-8 items-start gap-y-2">
-      <div className="flex flex-col"></div>
-      <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance mb-4">
+    <div className="flex flex-col gap-4">
+      <div className="flex flex-col justify-center items-center gap-4">
+      <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance">
         My Notes
         {postsQuery.status === 'pending' && '(loading)'}
       </h1>
-      <Button
-        onClick={() => postsQuery.fetchNextPage()}
-        disabled={!postsQuery.hasNextPage || postsQuery.isFetchingNextPage}
-      >
-        {postsQuery.isFetchingNextPage
-          ? 'Loading more...'
-          : postsQuery.hasNextPage
-            ? 'Load More'
-            : 'Nothing more to load'}
-      </Button>
 
+    <p className="leading-7 [&:not(:first-child)]:mt-6">
+      Take your notes and save with postgres database.
+    </p>
+</div>
       {postsQuery.data?.pages.map((page, index) => (
         <Fragment key={page.items[0]?.id || index}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
@@ -42,7 +36,18 @@ export default function Posts() {
             ))}
           </div>
         </Fragment>
-      ))}
+      ))}    
+        <Button
+          className="mt-10"
+        onClick={() => postsQuery.fetchNextPage()}
+        disabled={!postsQuery.hasNextPage || postsQuery.isFetchingNextPage}
+      >
+        {postsQuery.isFetchingNextPage
+          ? 'Loading more...'
+          : postsQuery.hasNextPage
+            ? 'Load More'
+            : 'Nothing more to load'}
+      </Button>
     </div>
   );
 }

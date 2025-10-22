@@ -1,11 +1,12 @@
 import Head from 'next/head';
 import type { ReactNode } from 'react';
+import { ClerkProvider } from '@clerk/nextjs';
 
 type DefaultLayoutProps = { children: ReactNode };
 
 export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
   return (
-    <>
+    <ClerkProvider>
       <Head>
         <title>
           <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance">
@@ -15,7 +16,7 @@ export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="h-screen">{children}</main>
-    </>
+      <main className="px-4">{children}</main>
+    </ClerkProvider>
   );
 };
