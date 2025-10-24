@@ -20,8 +20,8 @@ export default function About() {
         <a href="https://github.com/Kenkyoo">Github</a>
       </CardContent>
       <CardFooter>
-        <p>With</p>
-        <Heart />
+        <p className="mx-2">With</p>
+        <Heart color="purple"/>
       </CardFooter>
     </Card>
   );

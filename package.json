@@ -1,11 +1,11 @@
 {
-  "name": "examples-trpc-next-prisma-starter",
+  "name": "app-trpc-notes",
   "private": true,
   "scripts": {
     "generate": "prisma generate",
     "prisma-studio": "prisma studio",
-    "db-reset": "prisma migrate dev reset",
-    "dx:next": "run-s migrate-dev && next dev",
+    "db-reset": "prisma reset",
+    "dx:next": "run-s && next dev",
     "dx:prisma-studio": "pnpm prisma-studio",
     "dx": "run-p dx:* --print-label",
     "dev": "pnpm dx:next",
